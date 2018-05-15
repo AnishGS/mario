@@ -1,0 +1,520 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>Event sheetmain</name>
+    <events>
+        <event-block sid="5220972641561601">
+            <conditions>
+                <condition id="-1" name="Every tick" sid="8921751115827512" type="System" />
+            </conditions>
+            <actions>
+                <action id="-4" name="Set position to another object" sid="9174415003761907" type="Mario">
+                    <param id="0" name="Object">Platformer</param>
+                    <param id="1" name="Image point (optional)">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3144671263523833">
+            <conditions>
+                <condition id="2" name="Key is down" sid="3808250522062913" type="Keyboard">
+                    <param id="0" name="Key">37 (Left arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="9102109458931287" type="Mario">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="1759038717481941">
+            <conditions>
+                <condition id="2" name="Key is down" sid="4398926656895367" type="Keyboard">
+                    <param id="0" name="Key">39 (Right arrow)</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="7" name="Set mirrored" sid="9273535572024338" type="Mario">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3056555132224671">
+            <conditions>
+                <condition behavior="Platform" id="8" name="On moved" sid="1339481579624208" type="Platformer" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="4635290201001774" type="Mario">
+                    <param id="0" name="Animation">&quot;Walk&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4451030363817192">
+            <conditions>
+                <condition behavior="Platform" id="7" name="On stopped" sid="6303212144773834" type="Platformer" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="4990937674048287" type="Mario">
+                    <param id="0" name="Animation">&quot;Standing&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5487512742323319">
+            <conditions>
+                <condition behavior="Platform" id="5" name="On jump" sid="2805548025659158" type="Platformer" />
+            </conditions>
+            <actions>
+                <action id="4" name="Set animation" sid="2734181958573551" type="Mario">
+                    <param id="0" name="Animation">&quot;Jump&quot;</param>
+                    <param id="1" name="From">1</param>
+                </action>
+                <action id="0" name="Play" sid="4165148645588264" type="Audio">
+                    <param id="0" name="Audio file">Jump</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">1</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6714211666788272">
+            <conditions>
+                <condition behavior="Platform" id="9" name="On landed" sid="7411675855018757" type="Platformer" />
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="234229675117691">
+                    <conditions>
+                        <condition behavior="Platform" id="0" name="Is moving" sid="8668153723933358" type="Platformer" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="785602922707526" type="Mario">
+                            <param id="0" name="Animation">&quot;Walk&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4380216016969677">
+                    <conditions>
+                        <condition behavior="Platform" id="0" inverted="1" name="Is moving" sid="3755687566514131" type="Platformer" />
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="7215846986451221" type="Mario">
+                            <param id="0" name="Animation">&quot;Standing&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4604611670583646">
+                    <conditions />
+                    <actions />
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="3660773764965139">
+            <conditions>
+                <condition id="-2" name="Compare Y" sid="8082168039674093" type="Platformer">
+                    <param id="0" name="Comparison">4</param>
+                    <param id="1" name="Y co-ordinate">LayoutHeight</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-26" name="Restart layout" sid="8063208007294528" type="System" />
+            </actions>
+        </event-block>
+        <event-block sid="392439712934766">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="5631553791334357" type="Platformer">
+                    <param id="0" name="Object">Coin</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="5671078208368282" type="Coin" />
+                <action id="-12" name="Subtract from" sid="3934508198350029" type="Platformer">
+                    <param id="0" name="Instance variable">Points</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+                <action id="0" name="Set text" sid="3456505107453592" type="Text">
+                    <param id="0" name="Text">Platformer.Points</param>
+                </action>
+                <action id="0" name="Play" sid="8922547250188923" type="Audio">
+                    <param id="0" name="Audio file">coin</param>
+                    <param id="2" name="Loop">0</param>
+                    <param id="3" name="Volume">0</param>
+                    <param id="1" name="Tag (optional)">&quot;&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="6899566273408242">
+            <conditions>
+                <condition id="-2" name="On start of layout" sid="6606883978602995" type="System" />
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="7563362039969818" type="Mushroom">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="7990371649249992" type="bird">
+                    <param id="0" name="State">0</param>
+                </action>
+                <action id="-36" name="Save" sid="6025639833598922" type="System">
+                    <param id="0" name="Slot">&quot;mysave&quot;</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3247378904796476">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="9775234637414171" type="Mushroom">
+                    <param id="0" name="Instance variable">dr</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;right&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="5535380554110467" type="Mushroom">
+                    <param id="0" name="Control">1</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="8394664118317895" type="Mushroom">
+                    <param id="0" name="State">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="4208984596502401">
+            <conditions>
+                <condition id="-7" name="Compare instance variable" sid="5493997765961786" type="Mushroom">
+                    <param id="0" name="Instance variable">dr</param>
+                    <param id="1" name="Comparison">0</param>
+                    <param id="2" name="Value">&quot;left&quot;</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action behavior="Platform" id="7" name="Simulate control" sid="7495086128449885" type="Mushroom">
+                    <param id="0" name="Control">0</param>
+                </action>
+                <action id="7" name="Set mirrored" sid="4867162027623687" type="Mushroom">
+                    <param id="0" name="State">0</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="5918763773403556">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9084643672607126" type="Mushroom">
+                    <param id="0" name="Object">stopper</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="9403765636389091">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="2417132549426895" type="Mushroom">
+                            <param id="0" name="Instance variable">dr</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">&quot;right&quot;</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="9884500175447826" type="Mushroom">
+                            <param id="0" name="Instance variable">dr</param>
+                            <param id="1" name="Value">&quot;left&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="8694657300438726">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5057877352257698" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="1784697882376058" type="Mushroom">
+                            <param id="0" name="Instance variable">dr</param>
+                            <param id="1" name="Value">&quot;right&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="1450665970161403">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6747402069078686" type="Platformer">
+                    <param id="0" name="Object">Mushroom</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="4804226253186588">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="8819502563719253" type="Platformer" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="8374979145303459" type="Mushroom" />
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="5182752386347743" type="Platformer">
+                            <param id="0" name="Vector Y">-700</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5857355610217847">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="6816105865076151" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="8505933703332512" type="Mario">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="5335290787832993" type="Mario">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6978710509200182" type="Text4">
+                            <param id="0" name="Text">mario.life</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="4280769720557627">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="4575297364592162" type="Mario">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Go to layout (by name)" sid="7145312916230763" type="System">
+                                    <param id="0" name="Layout">&quot;Splash&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="5460906980396072">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="7082416491078369" type="Platformer">
+                    <param id="0" name="Object">bird</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5697858998035831">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="6601216789751958" type="Platformer" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="9101789094938989" type="bird" />
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="7728511495121413" type="Platformer">
+                            <param id="0" name="Vector Y">-700</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5009963568492729">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="7666750175330619" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="3835851673895921" type="Mario">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="7391117268922543" type="Mario">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="0" name="Set text" sid="6259109201722446" type="Text4">
+                            <param id="0" name="Text">mario.life</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6120680160170108">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="5179727182348834" type="Mario">
+                                    <param id="0" name="Instance variable">life</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-25" name="Go to layout (by name)" sid="100868008552568" type="System">
+                                    <param id="0" name="Layout">&quot;Splash&quot;</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6714653110118965">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8850334682091545" type="Platformer">
+                    <param id="0" name="Object">birdHorizontal</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="3608701842767593">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="9810882729798571" type="Platformer" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1918371472096148" type="birdHorizontal" />
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="9461698080663664" type="Platformer">
+                            <param id="0" name="Vector Y">-700</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7054475299842621">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="5441143716394666" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="8422959551739507" type="Mario">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="169491920730754" type="Mario">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block any="1" sid="4221816638786486">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="6484252619434491" type="Platformer">
+                    <param id="0" name="Object">gate</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6037132151249533">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="5394726331280445" type="Platformer">
+                            <param id="0" name="Instance variable">Points</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" sid="1040274615113672" type="System">
+                            <param id="0" name="Layout">&quot;Stage2&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="6911849141978805">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="642870844566532" type="Platformer">
+                    <param id="0" name="Object">gate2</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="6265786576914121">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="68515915781332" type="Platformer">
+                            <param id="0" name="Instance variable">Points</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" sid="7875784954624799" type="System">
+                            <param id="0" name="Layout">&quot;Stage3&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="791575500188817">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="8038815445616259" type="Platformer">
+                    <param id="0" name="Object">birdMax150</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="5241593498468638">
+                    <conditions>
+                        <condition behavior="Platform" id="4" name="Is falling" sid="6296895956200755" type="Platformer" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="4638096383125324" type="birdMax150" />
+                        <action behavior="Platform" id="9" name="Set vector Y" sid="2362149241924926" type="Platformer">
+                            <param id="0" name="Vector Y">-700</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="7878356017909174">
+                    <conditions>
+                        <condition id="-22" name="Else" sid="4287737465055452" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Flash" id="0" name="Flash" sid="2833866479551551" type="Mario">
+                            <param id="0" name="&apos;On&apos; time">0.1</param>
+                            <param id="1" name="&apos;Off&apos; time">0.1</param>
+                            <param id="2" name="Duration">1.0</param>
+                        </action>
+                        <action id="-12" name="Subtract from" sid="9986378419508899" type="Mario">
+                            <param id="0" name="Instance variable">life</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+        <event-block sid="9717081887888346">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="1414774960024903" type="Platformer">
+                    <param id="0" name="Object">chest</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-11" name="Add to" sid="8321670728414737" type="Mario">
+                    <param id="0" name="Instance variable">life</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2334608669168003">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="4734498375616068" type="Platformer">
+                    <param id="0" name="Object">chest</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-9" name="Destroy" sid="3799151749461092" type="chest" />
+                <action id="-11" name="Add to" sid="2951747384216506" type="Mario">
+                    <param id="0" name="Instance variable">life</param>
+                    <param id="1" name="Value">1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="3968613076193606">
+            <conditions>
+                <condition id="0" name="On collision with another object" sid="9206658426062526" type="Platformer">
+                    <param id="0" name="Object">gate3</param>
+                </condition>
+            </conditions>
+            <actions />
+            <sub-events>
+                <event-block sid="808558935218752">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="7500561268401919" type="Platformer">
+                            <param id="0" name="Instance variable">Points</param>
+                            <param id="1" name="Comparison">0</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-25" name="Go to layout (by name)" sid="7385464372957388" type="System">
+                            <param id="0" name="Layout">&quot;Finalsheet&quot;</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-block>
+    </events>
+</c2eventsheet>

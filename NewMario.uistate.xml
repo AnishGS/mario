@@ -1,0 +1,72 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2uistate>
+    <!--This is a UI state file - its content describes the user interface settings when the project was last open.
+It is entirely optional and the project will load without it.  If you are placing the project under source control,
+you probably do not want to add any .uistate.xml files to the repository.-->
+    <configurations>
+        <active>
+            <configuration name="HTML5" />
+        </active>
+        <display name="HTML5" />
+    </configurations>
+    <open-tabs>
+        <layout order="2">Stage1</layout>
+        <layout order="3">Splash</layout>
+        <layout order="4">Stage2</layout>
+        <layout order="5">Stage3</layout>
+        <layout order="8">CompanyLogo</layout>
+        <layout order="9">Engine</layout>
+        <layout order="10">Finalsheet</layout>
+        <event-sheet active="1" order="6">Event sheetmain</event-sheet>
+        <event-sheet order="7">Event sheet  Splash</event-sheet>
+        <event-sheet order="11">Event sheet Logo</event-sheet>
+        <event-sheet order="12">Event sheet Engine</event-sheet>
+    </open-tabs>
+    <properties>
+        <property expanded="1" name="About" />
+        <property expanded="1" name="Project settings" />
+        <property expanded="0" name="Window Size" />
+        <property expanded="1" name="Configuration Settings" />
+    </properties>
+    <families-expanded root="1" />
+    <folders-expanded>
+        <folder expanded="1" path="object-folder/" />
+        <folder expanded="1" path="layout-folder/" />
+        <folder expanded="1" path="event-folder/" />
+        <folder expanded="0" path="file-folder/" />
+        <folder expanded="1" path="sound-folder/" />
+        <folder expanded="1" path="music-folder/" />
+        <folder expanded="0" path="file-folder/Icons/" />
+        <folder expanded="1" path="animation-folder/Grass/" />
+        <folder expanded="1" path="animation-folder/Pillar/" />
+        <folder expanded="1" path="animation-folder/Mario/" />
+        <folder expanded="1" path="animation-folder/Platformer/" />
+        <folder expanded="1" path="animation-folder/FloatingGrass/" />
+        <folder expanded="1" path="animation-folder/Coin/" />
+        <folder expanded="1" path="animation-folder/brick/" />
+        <folder expanded="1" path="animation-folder/Banner/" />
+        <folder expanded="1" path="animation-folder/block/" />
+        <folder expanded="1" path="animation-folder/Mushroom/" />
+        <folder expanded="1" path="animation-folder/stopper/" />
+        <folder expanded="1" path="animation-folder/FloatingGrass2/" />
+        <folder expanded="1" path="animation-folder/FloatingGrass3/" />
+        <folder expanded="1" path="animation-folder/FloatingGrass4/" />
+        <folder expanded="1" path="animation-folder/bird/" />
+        <folder expanded="1" path="animation-folder/birdHorizontal/" />
+        <folder expanded="1" path="animation-folder/castle/" />
+        <folder expanded="1" path="animation-folder/gate/" />
+        <folder expanded="1" path="animation-folder/Sprite/" />
+        <folder expanded="1" path="animation-folder/Sprite2/" />
+        <folder expanded="1" path="animation-folder/blackstep/" />
+        <folder expanded="1" path="animation-folder/floater/" />
+        <folder expanded="1" path="animation-folder/gate2/" />
+        <folder expanded="1" path="animation-folder/birdMax150/" />
+        <folder expanded="1" path="animation-folder/chest/" />
+        <folder expanded="1" path="animation-folder/castlefloat/" />
+        <folder expanded="1" path="animation-folder/gate3/" />
+        <folder expanded="1" path="animation-folder/companylogo/" />
+        <folder expanded="1" path="animation-folder/Sprite3/" />
+        <folder expanded="1" path="animation-folder/Sprite4/" />
+        <folder expanded="1" path="animation-folder/Sprite5/" />
+    </folders-expanded>
+</c2uistate>
